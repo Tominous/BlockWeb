@@ -247,7 +247,7 @@ let fr = 0;
 
 document.body.appendChild(gui.container);
 
-//world.getChunk( 0, 0, 0);
+world.getChunk( 0, 0, 0);
 
 body.pos.set([-0.5, 16, -2.5]);
 body.acc[1] = -gravity;
@@ -279,7 +279,7 @@ display.onRender = () =>
 	body.update(1 / 60);
 	camera.setPos(body.pos);
 	camera.pos[1] += 1.5;
-	//vector.add(camera.pos, camera.getDirVec(-2), camera.pos);
+	vector.add(camera.pos, camera.getDirVec(-2), camera.pos);
 
 	blockHit = world.hitBlock(camera.getDirVec(), camera.pos);
 
@@ -353,7 +353,7 @@ display.onRender = () =>
 		camera.getViewModel(...body.pos, 0, Math.PI-camera.hangle,0)
 	);
 
-	//gl.drawArrays(gl.TRIANGLES, 0, 36 * 6);
+	gl.drawArrays(gl.TRIANGLES, 0, 36 * 6);
 
 	gl.disable(gl.DEPTH_TEST);
 	gl.lineWidth(2);
